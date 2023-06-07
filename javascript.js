@@ -1,32 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-<script id="lordIcon" src="https://cdn.lordicon.com/bhenfmcm.js"></script>
-<!--<script id="markerCluster" src="https://unpkg.com/@googlemaps/markerclusterer@2.0.2/dist/index.min.js"></script>-->
-<script>
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag() { dataLayer.push(arguments); }
-    //     gtag('js', new Date());
-    
-    //     gtag('config', 'G-NZREBRGKB3');
-    
-    if (window.location.pathname == '/' && localStorage.getItem('data-url')) {
-        let loc = localStorage.getItem('data-url');
-        location.href = window.location.href.includes('9068a585') ? `/site/9068a585/locations/${loc}?preview=true&insitepreview=true&dm_device=desktop` : `/locations/${loc}`;
-    }
-    
-    if(window.location.href.includes('store-locator')) {
-        let cluster = `<script id="markerCluster" src="https://unpkg.com/@googlemaps/markerclusterer@2.0.2/dist/index.min.js"></script`+'>'
-        let mapApi = `<script id="tt" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx2EGGaam0mmUstcJFaqSEExViBUV-lEM&amp;callback=initMap&amp;v=weekly&amp;libraries=geometry,places" async defer=""></script`+'>'
-        $(cluster).insertAfter('#lordIcon')
-        $(mapApi).insertAfter('#markerCluster')
-    } else {
-        $('#markerCluster').remove()
-        $('#tt').remove()
-    }
-</script>
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx2EGGaam0mmUstcJFaqSEExViBUV-lEM&amp;callback=initMap&amp;v=weekly&amp;libraries=geometry,places" async defer=""></script>-->
-
-<script>
-
 let map;
 let markers = [];
 var bounds;
